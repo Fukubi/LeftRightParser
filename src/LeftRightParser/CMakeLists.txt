@@ -1,0 +1,4 @@
+add_library(left_right_parser LeftRightParser.cpp)
+
+target_include_directories(left_right_parser PUBLIC .)
+target_link_libraries(left_right_parser simple_grammar_lkt)

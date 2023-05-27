@@ -20,13 +20,17 @@ TEST(SimpleGrammarLKT, FullMultiplication) {
   ASSERT_STREQ(lkt->getValue("", "int").c_str(), "S");
   ASSERT_STREQ(lkt->getValue("int", "*").c_str(), "*");
   ASSERT_STREQ(lkt->getValue("*", "int").c_str(), "S");
+  ASSERT_STREQ(lkt->getValue("int", "end").c_str(), "");
   delete lkt;
 }
 
-TEST(SimpleGrammarLKT, FullMultiplication) {
+TEST(SimpleGrammarLKT, MultiplicationWith3Numbers) {
   LookupTable *lkt = new SimpleGrammarLKT();
   ASSERT_STREQ(lkt->getValue("", "int").c_str(), "S");
   ASSERT_STREQ(lkt->getValue("int", "*").c_str(), "*");
   ASSERT_STREQ(lkt->getValue("*", "int").c_str(), "S");
+  ASSERT_STREQ(lkt->getValue("int", "*").c_str(), "*");
+  ASSERT_STREQ(lkt->getValue("*", "int").c_str(), "S");
+  ASSERT_STREQ(lkt->getValue("int", "end").c_str(), "");
   delete lkt;
 }

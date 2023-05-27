@@ -2,5 +2,6 @@ add_executable(parser main.cpp)
 
 add_subdirectory(LookupTable)
 add_subdirectory(SimpleGrammarLKT)
+add_subdirectory(LeftRightParser)
 
-target_link_libraries(parser simple_grammar_lkt)
+target_link_libraries(parser simple_grammar_lkt left_right_parser)
