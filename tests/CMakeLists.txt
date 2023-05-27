@@ -1,7 +1,7 @@
 enable_testing()
 
-add_executable(tests main_tests.cpp)
-target_link_libraries(tests GTest::gtest_main)
+add_executable(simple_grammar_lkt_tests SimpleGrammarLKTTests.cpp)
+target_link_libraries(simple_grammar_lkt_tests GTest::gtest_main simple_grammar_lkt)
 
 include(GoogleTest)
-gtest_discover_tests(tests)
+gtest_discover_tests(simple_grammar_lkt_tests)

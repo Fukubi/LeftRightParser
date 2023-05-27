@@ -1,0 +1,4 @@
+add_library(simple_grammar_lkt SimpleGrammarLKT.cpp)
+
+target_link_libraries(simple_grammar_lkt lookup_table)
+target_include_directories(simple_grammar_lkt PUBLIC .)
