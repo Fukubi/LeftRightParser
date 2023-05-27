@@ -4,33 +4,33 @@
 
 TEST(SimpleGrammarLKT, SingleInput) {
   LookupTable *lkt = new SimpleGrammarLKT();
-  ASSERT_STREQ(lkt->getValue("", "int").c_str(), "S");
+  ASSERT_EQ(lkt->getValue("", "int"), "S");
   delete lkt;
 }
 
 TEST(SimpleGrammarLKT, BeginMultiply) {
   LookupTable *lkt = new SimpleGrammarLKT();
-  ASSERT_STREQ(lkt->getValue("", "int").c_str(), "S");
-  ASSERT_STREQ(lkt->getValue("int", "*").c_str(), "*");
+  ASSERT_EQ(lkt->getValue("", "int"), "S");
+  ASSERT_EQ(lkt->getValue("int", "*"), "*");
   delete lkt;
 }
 
 TEST(SimpleGrammarLKT, FullMultiplication) {
   LookupTable *lkt = new SimpleGrammarLKT();
-  ASSERT_STREQ(lkt->getValue("", "int").c_str(), "S");
-  ASSERT_STREQ(lkt->getValue("int", "*").c_str(), "*");
-  ASSERT_STREQ(lkt->getValue("*", "int").c_str(), "S");
-  ASSERT_STREQ(lkt->getValue("int", "end").c_str(), "");
+  ASSERT_EQ(lkt->getValue("", "int"), "S");
+  ASSERT_EQ(lkt->getValue("int", "*"), "*");
+  ASSERT_EQ(lkt->getValue("*", "int"), "S");
+  ASSERT_EQ(lkt->getValue("int", "end"), "");
   delete lkt;
 }
 
 TEST(SimpleGrammarLKT, MultiplicationWith3Numbers) {
   LookupTable *lkt = new SimpleGrammarLKT();
-  ASSERT_STREQ(lkt->getValue("", "int").c_str(), "S");
-  ASSERT_STREQ(lkt->getValue("int", "*").c_str(), "*");
-  ASSERT_STREQ(lkt->getValue("*", "int").c_str(), "S");
-  ASSERT_STREQ(lkt->getValue("int", "*").c_str(), "*");
-  ASSERT_STREQ(lkt->getValue("*", "int").c_str(), "S");
-  ASSERT_STREQ(lkt->getValue("int", "end").c_str(), "");
+  ASSERT_EQ(lkt->getValue("", "int"), "S");
+  ASSERT_EQ(lkt->getValue("int", "*"), "*");
+  ASSERT_EQ(lkt->getValue("*", "int"), "S");
+  ASSERT_EQ(lkt->getValue("int", "*"), "*");
+  ASSERT_EQ(lkt->getValue("*", "int"), "S");
+  ASSERT_EQ(lkt->getValue("int", "end"), "");
   delete lkt;
 }

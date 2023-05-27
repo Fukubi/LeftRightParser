@@ -4,7 +4,8 @@ add_executable(simple_grammar_lkt_tests SimpleGrammarLKTTests.cpp)
 target_link_libraries(simple_grammar_lkt_tests GTest::gtest_main simple_grammar_lkt)
 
 add_executable(left_right_parser_tests LeftRightParserTests.cpp)
-target_link_libraries(left_right_parser_tests GTest::gtest_main left_right_parser)
+target_link_libraries(left_right_parser_tests GTest::gtest_main left_right_parser simple_grammar_lkt)
 
 include(GoogleTest)
-gtest_discover_tests(simple_grammar_lkt_tests left_right_parser_tests)
+gtest_discover_tests(simple_grammar_lkt_tests)
+gtest_discover_tests(left_right_parser_tests)
