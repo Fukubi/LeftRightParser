@@ -2,6 +2,32 @@
 
 A Bottom Up LR(1) Parser done in C++ to recognize a simple language, but still extensible enough to be expanded.
 
+## Usage
+
+It was used CMake to make it easier to test, compile and run the project. To make a runnable file you can use
+```bash
+# Create the build directory
+mkdir build
+# Change to it
+cd build
+# Generate files
+cmake ..
+# Compile
+make
+```
+
+And then run
+```bash
+# Assuming you are in the build directory
+./src/parser
+```
+
+To execute the tests you can run in the build directory the command
+```bash
+# Assuming you are in the build directory
+ctest
+```
+
 ## Descriptions
 
 ```mermaid
