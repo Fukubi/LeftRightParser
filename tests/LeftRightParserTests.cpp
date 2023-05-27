@@ -18,3 +18,11 @@ TEST(LeftRightParserTests, SimpleMultiplication) {
 
   delete lr;
 }
+
+TEST(LeftRightParserTests, MultipleMultiplication) {
+  LeftRightParser *lr = new LeftRightParser(new SimpleGrammarLKT());
+
+  ASSERT_EQ(lr->parse("1*2*3"), "S*S*S");
+
+  delete lr;
+}
