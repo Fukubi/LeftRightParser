@@ -28,7 +28,7 @@ std::string LeftRightParser::parse(std::string stream) {
 
   // A quantidade de números sempre será par a menos que seja a cadeia vazia, aqui é utilizado
   // isso para ter certeza que a entrada é, ao menos, do tipo S*S ou S*S*S*S
-  if (counterNumber % 2 != 0) {
+  if (counterNumber % 2 != 0 && stream.size() != 1) {
     std::cerr << "Entrada nao aceita na regra gramatical\n";
     return "";
   }
