@@ -11,7 +11,7 @@ int main() {
   int space_counter;
   int size_after_input;
 
-  std::cout << "Type the string inside the gramatical rule: ";
+  std::cout << "Digite uma string de acordo com a regra gramatical (ex: 3*5): ";
   std::getline(std::cin, in);
 
   size_after_input = in.length();
