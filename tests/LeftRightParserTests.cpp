@@ -14,7 +14,7 @@ TEST(LeftRightParserTests, SimpleInput) {
 TEST(LeftRightParserTests, SimpleMultiplication) {
   LeftRightParser *lr = new LeftRightParser(new SimpleGrammarLKT());
 
-  ASSERT_EQ(lr->parse("1*2"), "S*S");
+  ASSERT_EQ(lr->parse("1*2"), "S");
 
   delete lr;
 }
@@ -22,7 +22,7 @@ TEST(LeftRightParserTests, SimpleMultiplication) {
 TEST(LeftRightParserTests, MultipleMultiplication) {
   LeftRightParser *lr = new LeftRightParser(new SimpleGrammarLKT());
 
-  ASSERT_EQ(lr->parse("1*2*3"), "S*S*S");
+  ASSERT_EQ(lr->parse("1*2*3"), "S");
 
   delete lr;
 }

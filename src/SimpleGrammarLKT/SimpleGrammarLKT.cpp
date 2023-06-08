@@ -1,9 +1,9 @@
 #include "SimpleGrammarLKT.hpp"
 
 SimpleGrammarLKT::SimpleGrammarLKT() {
-  this->lookupTable.push_back({"", "2", "", ""});
-  this->lookupTable.push_back({"*", "2", "0", "0"});
-  this->lookupTable.push_back({"S", "", "1", "0"});
+  this->lookupTable.push_back({"S", "2", "0", "0"});
+  this->lookupTable.push_back({"*", "2", "1", "1"});
+  this->lookupTable.push_back({"A", "2", "1", "0"});
 
   this->actualRow = 0;
 }

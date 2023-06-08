@@ -14,6 +14,7 @@ std::string LeftRightParser::parse(std::string stream) {
 
   int counterChar = 0;
   int counterNumber = 0;
+  std::string value;
 
   for (char el : stream) {
     if (el == '*' || el == ' ') {
@@ -31,6 +32,8 @@ std::string LeftRightParser::parse(std::string stream) {
     return "";
   }
 
+  stream.push_back(';');
+
   for (char el : stream) {
     if (std::string("123456789").find(el) != std::string::npos) {
       this->lookAhead = "int";
@@ -40,13 +43,16 @@ std::string LeftRightParser::parse(std::string stream) {
       this->lookAhead = "end";
     }
 
-    std::string value =
-        this->lkt->getValue(this->readedSymbols, this->lookAhead);
+    value = this->lkt->getValue(this->readedSymbols, this->lookAhead);
 
-    std::cout << value << "->" << el << "\n";
-
-    this->readedSymbols = this->readedSymbols + value;
+    if (this->lookAhead.compare("end") != 0) {
+      std::cout << value << "->" << el << "\n";
+      this->readedSymbols = this->readedSymbols + value;
+    }
   }
 
-  return this->readedSymbols;
+  value = this->lkt->getValue(this->readedSymbols, this->lookAhead);
+  std::cout << value << "->" << this->readedSymbols << "\n";
+
+  return value;
 }
