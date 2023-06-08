@@ -16,7 +16,7 @@ int main() {
 
   size_after_input = in.length();
 
-  // Removing any extra space
+  // Removendo o espaçamento extra
   space_counter = std::count(in.begin(), in.end(), ' ');
   std::remove(in.begin(), in.end(), ' ');
   in.resize(size_after_input - space_counter);

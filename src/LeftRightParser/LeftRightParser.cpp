@@ -12,11 +12,25 @@ std::string LeftRightParser::parse(std::string stream) {
     return "S";
   }
 
+  int counterChar = 0;
+  int counterNumber = 0;
+
   for (char el : stream) {
-    if (std::string("123456789*").find(el) == std::string::npos) {
-      std::cerr << "Given input does not comply with the gramatic rules\n";
+    if (el == '*' || el == ' ') {
+      counterChar++;
+    } else if (std::string("123456789").find(el) != std::string::npos) {
+      counterNumber++;
+    } else {
+      std::cerr << "Entrada não aceita na regra gramátical\n";
       return "";
     }
+  }
+
+  // A quantidade de números sempre será par a menos que seja a cadeia vazia, aqui é utilizado
+  // isso para ter certeza que a entrada é, ao menos, do tipo S*S ou S*S*S*S
+  if (counterNumber % 2 != 0) {
+    std::cerr << "Entrada não aceita na regra gramátical\n";
+    return "";
   }
 
   for (char el : stream) {
