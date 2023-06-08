@@ -16,6 +16,8 @@ int main() {
 
   size_after_input = in.length();
 
+  std::cout << in << "\n";
+
   // Removendo o espaçamento extra
   space_counter = std::count(in.begin(), in.end(), ' ');
   std::remove(in.begin(), in.end(), ' ');
